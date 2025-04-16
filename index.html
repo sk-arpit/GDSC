@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMDB Clone</title>
+  <!-- Link to Font Awesome for search icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img
+        src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+        alt="TMDB Logo" class="logo-img" />
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li class="dropdown">
+          <a href="#">Movies</a>
+          <div class="dropdown-content">
+            <a href="#">Popular</a>
+            <a href="#">Now Playing</a>
+            <a href="#">Upcoming</a>
+            <a href="#">Top Rated</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">TV Shows</a>
+          <div class="dropdown-content">
+            <a href="#">Popular</a>
+            <a href="#">Airing Today</a>
+            <a href="#">On TV</a>
+            <a href="#">Top Rated</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">People</a>
+          <div class="dropdown-content">
+            <a href="#">Popular People</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">More</a>
+          <div class="dropdown-content">
+            <a href="#">Discussions</a>
+            <a href="#">Leaderboard</a>
+            <a href="#">Support</a>
+            <a href="#">API Documentation</a>
+            <a href="#">API for Business</a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+    <!-- Right Side Links -->
+    <div class="right-links">
+      <a href="#" class="plus-icon"><i class="fa fa-plus"></i></a>
+      <a href="#" class="language">EN</a>
+      <a href="#" class="login">Login</a>
+      <a href="#" class="join">Join TMDB</a>
+      <a href="#" class="search-icon"><i class="fa fa-search"></i></a>
+    </div>
+  </header>
+  </header>
+
+  <!-- Search Bar Below Navbar -->
+  <section class="search-bar">
+    <div class="search-container">
+      <div class="search-input-container">
+        <i class="fa fa-search"></i> <!-- Search icon (Font Awesome) -->
+        <input type="text" placeholder="Search for a movie, TV show, person..." />
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome.</h1>
+      <p>Millions of movies, TV shows and people to discover. Explore now.</p>
+      <div class="hero-search">
+        <input type="text" placeholder="Search for a movie, tv show, person..." />
+        <button>Search</button>
+      </div>
+    </div>
+  </section>
+  <!-- Trending Section -->
+  <section class="trending-section">
+    <div class="section-header">
+      <h2>Trending</h2>
+      <div class="time-toggle">
+        <button class="active" data-period="day">Today</button>
+        <button data-period="week">This Week</button>
+      </div>
+    </div>
+
+    <div class="card-scroll-wrapper">
+      <div class="card-slider" id="trending-cards">
+        <!-- Cards will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+  <!-- Latest Trailers Section -->
+  <section class="trailers-section">
+    <div class="section-header1">
+      <h2>Latest Trailers</h2>
+      <div class="trailers-buttons">
+        <button class="trailer-btn active" data-category="popular">Popular</button>
+        <button class="trailer-btn" data-category="streaming">Streaming</button>
+        <button class="trailer-btn" data-category="on-tv">On TV</button>
+        <button class="trailer-btn" data-category="for-rent">For Rent</button>
+        <button class="trailer-btn" data-category="in-theaters">In Theaters</button>
+      </div>
+    </div>
+    <div class="trailer-container" id="trailer-container">
+      <!-- Trailers will be dynamically injected here -->
+    </div>
+  </section>
+  <section class="popular-section">
+    <div class="section-header">
+      <h2>What's Popular</h2>
+      <div class="popular-buttons">
+        <button class="popular-btn active" data-type="movie" data-category="popular">Streaming</button>
+        <button class="popular-btn" data-type="tv" data-category="popular">On TV</button>
+        <button class="popular-btn" data-type="movie" data-category="now_playing">For Rent</button>
+        <button class="popular-btn" data-type="movie" data-category="upcoming">In Theatres</button>
+      </div>
+    </div>
+    <div class="card-scroll-wrapper">
+      <div class="popular-slider" id="popular-slider"></div>
+    </div>
+  </section>
+  <!-- Free to Watch Section -->
+  <section class="free-to-watch-section">
+    <div class="section-header">
+      <h2>Free to Watch</h2>
+      <div class="free-buttons">
+        <button id="freeMovieBtn" class="trailer-btn now active">Movies</button>
+        <button id="freeTvBtn" class="trailer-btn now">TV</button>
+      </div>
+    </div>
+    <div class="card-scroll-wrapper">
+      <div class="free-slider" id="free-slider">
+        <!-- Free content will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+  <section class="join-today">
+    <div class="join-container">
+      <h2>Join Today</h2>
+      <p>Get access to maintain your own custom personal lists, track what you've seen and search and filter for what to
+        watch next—regardless if it's in theatres, on TV or available on popular streaming services like Netflix, Amazon
+        Prime Video, Apple TV+, Crunchyroll, and JioHotstar.</p>
+      <button class="join-btn">Sign Up</button>
+    </div>
+  </section>
+  <div class="img">
+    <img src="Screenshot 2025-04-16 141642.png" alt="">
+  </div>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+            alt="TMDB Logo">
+        </div>
+        <a href="#" class="join-community-btn">JOIN THE COMMUNITY</a>
+      </div>
+      <div class="footer-middle">
+        <div class="line">
+          <h4>The Basics</h4>
+          <ul>
+            <li><a href="#">About TMDB</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Support Forums</a></li>
+            <li><a href="#">API Documentation</a></li>
+            <li><a href="#">System Status</a></li>
+          </ul>
+        </div>
+        <div class="line">
+          <h4>GET INVOLVED</h4>
+          <ul>
+            <li><a href="#">Contribution Bible</a></li>
+            <li><a href="#">Add New Movie</a></li>
+            <li><a href="#">Add New TV Show</a></li>
+          </ul>
+        </div>
+        <div class="line">
+          <h4>COMMUNITY</h4>
+          <ul>
+            <li><a href="#">Guidlines</a></li>
+            <li><a href="#">Discussion</a></li>
+            <li><a href="#">Leaderboard</a></li>
+          </ul>
+        </div>
+        <div class="line">
+          <h4>LEGAL</h4>
+          <ul>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">API Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">DMCA Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
